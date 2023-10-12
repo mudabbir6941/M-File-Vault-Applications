@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "dgSpecHash": "h+KFalX0Cr9tP53DaKMot5ihstNjuwpkuJqe/DAGs8oefpPCfoWjLoEWYVudSDwcZ7rzckgqExCGHkOqxiTglA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Mudabbir Azam\\source\\repos\\ExcelFileReader\\ExcelFileReader\\ExcelFileReader.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Mudabbir Azam\\.nuget\\packages\\bouncycastle\\1.8.9\\bouncycastle.1.8.9.nupkg.sha512",
+    "C:\\Users\\Mudabbir Azam\\.nuget\\packages\\epplus\\6.2.10\\epplus.6.2.10.nupkg.sha512",
+    "C:\\Users\\Mudabbir Azam\\.nuget\\packages\\epplus.interfaces\\6.1.1\\epplus.interfaces.6.1.1.nupkg.sha512",
+    "C:\\Users\\Mudabbir Azam\\.nuget\\packages\\epplus.system.drawing\\6.1.1\\epplus.system.drawing.6.1.1.nupkg.sha512",
+    "C:\\Users\\Mudabbir Azam\\.nuget\\packages\\epplusexcel\\1.0.0\\epplusexcel.1.0.0.nupkg.sha512",
+    "C:\\Users\\Mudabbir Azam\\.nuget\\packages\\interop.mfilesapi\\21.11.3\\interop.mfilesapi.21.11.3.nupkg.sha512",
+    "C:\\Users\\Mudabbir Azam\\.nuget\\packages\\itextsharp\\5.5.13.3\\itextsharp.5.5.13.3.nupkg.sha512",
+    "C:\\Users\\Mudabbir Azam\\.nuget\\packages\\mfiles.crypto\\21.11.3\\mfiles.crypto.21.11.3.nupkg.sha512",
+    "C:\\Users\\Mudabbir Azam\\.nuget\\packages\\mfiles.vaf\\2.3.623.9\\mfiles.vaf.2.3.623.9.nupkg.sha512",
+    "C:\\Users\\Mudabbir Azam\\.nuget\\packages\\mfiles.vaf.configuration\\21.11.3\\mfiles.vaf.configuration.21.11.3.nupkg.sha512",
+    "C:\\Users\\Mudabbir Azam\\.nuget\\packages\\newtonsoft.json\\10.0.3\\newtonsoft.json.10.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

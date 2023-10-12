@@ -1,0 +1,65 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Mudabbir Azam\\source\\repos\\ExcelFileReader\\ExcelFileReader\\ExcelFileReader.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Mudabbir Azam\\source\\repos\\ExcelFileReader\\ExcelFileReader\\ExcelFileReader.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Mudabbir Azam\\source\\repos\\ExcelFileReader\\ExcelFileReader\\ExcelFileReader.csproj",
+        "projectName": "ExcelFileReader",
+        "projectPath": "C:\\Users\\Mudabbir Azam\\source\\repos\\ExcelFileReader\\ExcelFileReader\\ExcelFileReader.csproj",
+        "packagesPath": "C:\\Users\\Mudabbir Azam\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Mudabbir Azam\\source\\repos\\ExcelFileReader\\ExcelFileReader\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Mudabbir Azam\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net45"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net45": {
+            "targetAlias": "net45",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net45": {
+          "targetAlias": "net45",
+          "dependencies": {
+            "EPPlus": {
+              "target": "Package",
+              "version": "[6.2.10, )"
+            },
+            "EpplusExcel": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
+            "MFiles.VAF": {
+              "target": "Package",
+              "version": "[2.3.623.9, )"
+            },
+            "iTextSharp": {
+              "target": "Package",
+              "version": "[5.5.13.3, )"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.426\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

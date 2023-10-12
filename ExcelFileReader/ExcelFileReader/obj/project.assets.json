@@ -1,0 +1,422 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETFramework,Version=v4.5": {
+      "BouncyCastle/1.8.9": {
+        "type": "package",
+        "compile": {
+          "lib/BouncyCastle.Crypto.dll": {}
+        },
+        "runtime": {
+          "lib/BouncyCastle.Crypto.dll": {}
+        }
+      },
+      "EPPlus/6.2.10": {
+        "type": "package",
+        "dependencies": {
+          "EPPlus.Interfaces": "6.1.1",
+          "EPPlus.System.Drawing": "6.1.1"
+        },
+        "frameworkAssemblies": [
+          "PresentationCore",
+          "PresentationFramework",
+          "System",
+          "System.Core",
+          "System.Data",
+          "System.Security",
+          "System.Xml",
+          "System.configuration",
+          "WindowsBase"
+        ],
+        "compile": {
+          "lib/net35/EPPlus.dll": {}
+        },
+        "runtime": {
+          "lib/net35/EPPlus.dll": {}
+        }
+      },
+      "EPPlus.Interfaces/6.1.1": {
+        "type": "package",
+        "compile": {
+          "lib/net35/EPPlus.Interfaces.dll": {}
+        },
+        "runtime": {
+          "lib/net35/EPPlus.Interfaces.dll": {}
+        }
+      },
+      "EPPlus.System.Drawing/6.1.1": {
+        "type": "package",
+        "dependencies": {
+          "EPPlus.Interfaces": "6.1.1"
+        },
+        "compile": {
+          "lib/net35/EPPlus.System.Drawing.dll": {}
+        },
+        "runtime": {
+          "lib/net35/EPPlus.System.Drawing.dll": {}
+        }
+      },
+      "EpplusExcel/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net40/EPPlus_ExcelDemo.vshost.exe": {},
+          "lib/net40/Spire.License.dll": {},
+          "lib/net40/Spire.Pdf.dll": {},
+          "lib/net40/Spire.XLS.dll": {}
+        },
+        "runtime": {
+          "lib/net40/EPPlus_ExcelDemo.vshost.exe": {},
+          "lib/net40/Spire.License.dll": {},
+          "lib/net40/Spire.Pdf.dll": {},
+          "lib/net40/Spire.XLS.dll": {}
+        }
+      },
+      "Interop.MFilesAPI/21.11.3": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Interop.MFilesAPI.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Interop.MFilesAPI.dll": {}
+        }
+      },
+      "iTextSharp/5.5.13.3": {
+        "type": "package",
+        "dependencies": {
+          "BouncyCastle": "1.8.9"
+        },
+        "compile": {
+          "lib/itextsharp.dll": {}
+        },
+        "runtime": {
+          "lib/itextsharp.dll": {}
+        }
+      },
+      "MFiles.Crypto/21.11.3": {
+        "type": "package",
+        "compile": {
+          "lib/net45/MFiles.Crypto.dll": {}
+        },
+        "runtime": {
+          "lib/net45/MFiles.Crypto.dll": {}
+        }
+      },
+      "MFiles.VAF/2.3.623.9": {
+        "type": "package",
+        "dependencies": {
+          "Interop.MFilesAPI": "[21.11.3]",
+          "MFiles.Crypto": "[21.11.3]",
+          "MFiles.VAF.Configuration": "[21.11.3]",
+          "Newtonsoft.Json": "[10.0.3]"
+        },
+        "compile": {
+          "lib/net45/MFiles.VAF.dll": {},
+          "lib/net45/MFiles.VAF.resources.dll": {}
+        },
+        "runtime": {
+          "lib/net45/MFiles.VAF.dll": {},
+          "lib/net45/MFiles.VAF.resources.dll": {}
+        }
+      },
+      "MFiles.VAF.Configuration/21.11.3": {
+        "type": "package",
+        "dependencies": {
+          "Interop.MFilesAPI": "21.11.3",
+          "MFiles.Crypto": "21.11.3"
+        },
+        "compile": {
+          "lib/net45/MFiles.VAF.Configuration.Interfaces.dll": {},
+          "lib/net45/MFiles.VAF.Configuration.dll": {},
+          "lib/net45/MFiles.VAF.Configuration.resources.dll": {}
+        },
+        "runtime": {
+          "lib/net45/MFiles.VAF.Configuration.Interfaces.dll": {},
+          "lib/net45/MFiles.VAF.Configuration.dll": {},
+          "lib/net45/MFiles.VAF.Configuration.resources.dll": {}
+        }
+      },
+      "Newtonsoft.Json/10.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "BouncyCastle/1.8.9": {
+      "sha512": "axnBgvdD5n+FnEG6efk/tfKuMFru7R/EoISH9zjh319yb3HD24TEHSAbNN/lTRT2ulOGRxDgOsCjkuk08iwWPg==",
+      "type": "package",
+      "path": "bouncycastle/1.8.9",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "bouncycastle.1.8.9.nupkg.sha512",
+        "bouncycastle.nuspec",
+        "lib/BouncyCastle.Crypto.dll"
+      ]
+    },
+    "EPPlus/6.2.10": {
+      "sha512": "U/kj9mKoUMOMUvNIMwbD7xy4R/UTyc9baMVxDWQhYaeIueCviC12feQ3qbcUJZc8yyodC8gAj0BhzBg/wFIjTg==",
+      "type": "package",
+      "path": "epplus/6.2.10",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "EPPlusLogo.png",
+        "epplus.6.2.10.nupkg.sha512",
+        "epplus.nuspec",
+        "lib/net35/EPPlus.dll",
+        "lib/net35/EPPlus.xml",
+        "lib/net462/EPPlus.dll",
+        "lib/net462/EPPlus.xml",
+        "lib/net6.0/EPPlus.dll",
+        "lib/net6.0/EPPlus.xml",
+        "lib/net7.0/EPPlus.dll",
+        "lib/net7.0/EPPlus.xml",
+        "lib/netstandard2.0/EPPlus.dll",
+        "lib/netstandard2.0/EPPlus.xml",
+        "lib/netstandard2.1/EPPlus.dll",
+        "lib/netstandard2.1/EPPlus.xml",
+        "license.md",
+        "readme.md",
+        "readme.txt"
+      ]
+    },
+    "EPPlus.Interfaces/6.1.1": {
+      "sha512": "y7dkrOoE1ZR9Vgy1Jf2rEIaTf3SHlUjYt01NklP+F5Qh7S2ruPbzTcpYLRWMeXiG8XL8h2jqX4CyIkFt3NQGZw==",
+      "type": "package",
+      "path": "epplus.interfaces/6.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "EPPlusLogo.png",
+        "epplus.interfaces.6.1.1.nupkg.sha512",
+        "epplus.interfaces.nuspec",
+        "lib/net35/EPPlus.Interfaces.dll",
+        "lib/net462/EPPlus.Interfaces.dll",
+        "lib/net6.0/EPPlus.Interfaces.dll",
+        "lib/net7.0/EPPlus.Interfaces.dll",
+        "lib/netstandard2.0/EPPlus.Interfaces.dll",
+        "lib/netstandard2.1/EPPlus.Interfaces.dll",
+        "license.md",
+        "readme.md"
+      ]
+    },
+    "EPPlus.System.Drawing/6.1.1": {
+      "sha512": "lRF5gHYrmkHOOiLMI0t6q8zNYjUrzRgAM5BCXumv5xiqXko8fx3AWI+HCNZfhEqVFGOop+42KfR5GiUcCoyoMw==",
+      "type": "package",
+      "path": "epplus.system.drawing/6.1.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "EPPlusLogo.png",
+        "epplus.system.drawing.6.1.1.nupkg.sha512",
+        "epplus.system.drawing.nuspec",
+        "lib/net35/EPPlus.System.Drawing.dll",
+        "lib/net462/EPPlus.System.Drawing.dll",
+        "lib/net6.0/EPPlus.System.Drawing.dll",
+        "lib/net7.0/EPPlus.System.Drawing.dll",
+        "lib/netstandard2.0/EPPlus.System.Drawing.dll",
+        "lib/netstandard2.1/EPPlus.System.Drawing.dll",
+        "license.md",
+        "readme.md"
+      ]
+    },
+    "EpplusExcel/1.0.0": {
+      "sha512": "0dP0gfNlZaMXZKpnrWX6aVZDofZflUDswpe9pl/D06qz2K4Snc2cQzEnzfOv/SLlSH2Rxhxj4KBTvX8GoCpkjg==",
+      "type": "package",
+      "path": "epplusexcel/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "epplusexcel.1.0.0.nupkg.sha512",
+        "epplusexcel.nuspec",
+        "lib/net40/EPPlus_ExcelDemo.exe.config",
+        "lib/net40/EPPlus_ExcelDemo.vshost.exe",
+        "lib/net40/EPPlus_ExcelDemo.vshost.exe.config",
+        "lib/net40/EPPlus_ExcelDemo.vshost.exe.manifest",
+        "lib/net40/Spire.License.dll",
+        "lib/net40/Spire.Pdf.dll",
+        "lib/net40/Spire.Pdf.xml",
+        "lib/net40/Spire.XLS.dll",
+        "lib/net40/Spire.XLS.xml"
+      ]
+    },
+    "Interop.MFilesAPI/21.11.3": {
+      "sha512": "QQ6RjKW7AbvQ9pRgzmLOUlEpnL/Y08E56wj307JXEH24L32KUK7knMwhOUv3LBl0+eMc3HV37pRCAk8bbMZfwg==",
+      "type": "package",
+      "path": "interop.mfilesapi/21.11.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "interop.mfilesapi.21.11.3.nupkg.sha512",
+        "interop.mfilesapi.nuspec",
+        "lib/net45/Interop.MFilesAPI.dll"
+      ]
+    },
+    "iTextSharp/5.5.13.3": {
+      "sha512": "vtnMhTEJdZFCkLqaQLjD8aqTBIVKHPrSFuSXnxbLEJlvE/j/l88fvG9wtsejXTmhtErMo0lA9T2LdfdfbwplYw==",
+      "type": "package",
+      "path": "itextsharp/5.5.13.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "gnu-agpl-v3.0.md",
+        "itextsharp.5.5.13.3.nupkg.sha512",
+        "itextsharp.nuspec",
+        "lib/iTextSharp.xml",
+        "lib/itextsharp.dll",
+        "notice.txt"
+      ]
+    },
+    "MFiles.Crypto/21.11.3": {
+      "sha512": "JNDN9VyFKDxlvr+15jorbf8brXoYxMK/Hm6Acm06Knpm0twynOzYXp3NQGK3i/yRwux2uwZbQJKGh45w1otQLA==",
+      "type": "package",
+      "path": "mfiles.crypto/21.11.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/MFiles.Crypto.dll",
+        "mfiles.crypto.21.11.3.nupkg.sha512",
+        "mfiles.crypto.nuspec"
+      ]
+    },
+    "MFiles.VAF/2.3.623.9": {
+      "sha512": "4BirRYCOVmSn/83wYrxe3NMHC4pd2rENrrVkSF01BhN1Bk0Y98KrTKlFL0sKXVYl+4X58TBk3h1h481kNXyBaA==",
+      "type": "package",
+      "path": "mfiles.vaf/2.3.623.9",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/MFiles.VAF.dll",
+        "lib/net45/MFiles.VAF.pdb",
+        "lib/net45/MFiles.VAF.resources.dll",
+        "lib/net45/MFiles.VAF.xml",
+        "mfiles.vaf.2.3.623.9.nupkg.sha512",
+        "mfiles.vaf.nuspec",
+        "tools/init.ps1"
+      ]
+    },
+    "MFiles.VAF.Configuration/21.11.3": {
+      "sha512": "uBNLllckMzxpkiipDdqhOrz4CH7QvxXcmtxKT9h/qW4g1vEyUR5pBJFoxMfw+e6Hqmis8Mc02JeB0Nn4nd1dSw==",
+      "type": "package",
+      "path": "mfiles.vaf.configuration/21.11.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/MFiles.VAF.Configuration.Interfaces.dll",
+        "lib/net45/MFiles.VAF.Configuration.Interfaces.xml",
+        "lib/net45/MFiles.VAF.Configuration.dll",
+        "lib/net45/MFiles.VAF.Configuration.resources.dll",
+        "lib/net45/MFiles.VAF.Configuration.xml",
+        "mfiles.vaf.configuration.21.11.3.nupkg.sha512",
+        "mfiles.vaf.configuration.nuspec"
+      ]
+    },
+    "Newtonsoft.Json/10.0.3": {
+      "sha512": "hSXaFmh7hNCuEoC4XNY5DrRkLDzYHqPx/Ik23R4J86Z7PE/Y6YidhG602dFVdLBRSdG6xp9NabH3dXpcoxWvww==",
+      "type": "package",
+      "path": "newtonsoft.json/10.0.3",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "newtonsoft.json.10.0.3.nupkg.sha512",
+        "newtonsoft.json.nuspec",
+        "tools/install.ps1"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETFramework,Version=v4.5": [
+      "EPPlus >= 6.2.10",
+      "EpplusExcel >= 1.0.0",
+      "MFiles.VAF >= 2.3.623.9",
+      "iTextSharp >= 5.5.13.3"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\Mudabbir Azam\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\Mudabbir Azam\\source\\repos\\ExcelFileReader\\ExcelFileReader\\ExcelFileReader.csproj",
+      "projectName": "ExcelFileReader",
+      "projectPath": "C:\\Users\\Mudabbir Azam\\source\\repos\\ExcelFileReader\\ExcelFileReader\\ExcelFileReader.csproj",
+      "packagesPath": "C:\\Users\\Mudabbir Azam\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Mudabbir Azam\\source\\repos\\ExcelFileReader\\ExcelFileReader\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\Mudabbir Azam\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net45"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net45": {
+          "targetAlias": "net45",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net45": {
+        "targetAlias": "net45",
+        "dependencies": {
+          "EPPlus": {
+            "target": "Package",
+            "version": "[6.2.10, )"
+          },
+          "EpplusExcel": {
+            "target": "Package",
+            "version": "[1.0.0, )"
+          },
+          "MFiles.VAF": {
+            "target": "Package",
+            "version": "[2.3.623.9, )"
+          },
+          "iTextSharp": {
+            "target": "Package",
+            "version": "[5.5.13.3, )"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.426\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
