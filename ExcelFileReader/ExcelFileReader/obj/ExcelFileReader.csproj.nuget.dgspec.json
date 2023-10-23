@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Mudabbir Azam\\source\\repos\\ExcelFileReader\\ExcelFileReader\\ExcelFileReader.csproj": {}
+    "D:\\New folder\\Desk, Dec & Download\\Desktop\\Texitech Task\\Vault-Applications\\ExcelFileReader\\ExcelFileReader\\ExcelFileReader.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Mudabbir Azam\\source\\repos\\ExcelFileReader\\ExcelFileReader\\ExcelFileReader.csproj": {
+    "D:\\New folder\\Desk, Dec & Download\\Desktop\\Texitech Task\\Vault-Applications\\ExcelFileReader\\ExcelFileReader\\ExcelFileReader.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Mudabbir Azam\\source\\repos\\ExcelFileReader\\ExcelFileReader\\ExcelFileReader.csproj",
+        "projectUniqueName": "D:\\New folder\\Desk, Dec & Download\\Desktop\\Texitech Task\\Vault-Applications\\ExcelFileReader\\ExcelFileReader\\ExcelFileReader.csproj",
         "projectName": "ExcelFileReader",
-        "projectPath": "C:\\Users\\Mudabbir Azam\\source\\repos\\ExcelFileReader\\ExcelFileReader\\ExcelFileReader.csproj",
+        "projectPath": "D:\\New folder\\Desk, Dec & Download\\Desktop\\Texitech Task\\Vault-Applications\\ExcelFileReader\\ExcelFileReader\\ExcelFileReader.csproj",
         "packagesPath": "C:\\Users\\Mudabbir Azam\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Mudabbir Azam\\source\\repos\\ExcelFileReader\\ExcelFileReader\\obj\\",
+        "outputPath": "D:\\New folder\\Desk, Dec & Download\\Desktop\\Texitech Task\\Vault-Applications\\ExcelFileReader\\ExcelFileReader\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Mudabbir Azam\\AppData\\Roaming\\NuGet\\NuGet.Config",

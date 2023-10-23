@@ -22,7 +22,8 @@ namespace ExcelFileReader
         : ConfigurableVaultApplicationBase<Configuration>
     {
         double ResultAmount;
-        string Prepaymentreport = "OT.Prepaymentreport";     
+        double excelrows;
+   
         [StateAction("WFS.PrepaymentWorkfow.UploadFile")]
         public void WorkflowStateAction(StateEnvironment env)
         {
@@ -77,8 +78,7 @@ namespace ExcelFileReader
                         }
                     }
                     return temp;
-                }
-                //var PrepaymentNo = Convert.ToString( env.Vault.ValueListItemOperations.GetValueListItems(1111));
+                }             
                 var PrepaymentNo2 = env.ObjVerEx.GetProperty(PrepaymentNo).Value.DisplayValue;
                 foreach (var item in ExcelPrepaymentNo)
                 {
@@ -147,13 +147,13 @@ namespace ExcelFileReader
                         newRow++;
 
                     }
+                    excelrows = worksheet.Dimension.Rows;
                     // Save the new Excel file
                     string newExcelFilePath = @"D:\M&P_Client\PrePayment_Report\Excle\FilteredData.xlsx";
                     FileInfo newFileInfo = new FileInfo(newExcelFilePath);
                     newPackage.SaveAs(newFileInfo);
-
-                   // string NEWPath = @"D:\M&P_Client\PrePayment_Report\Excle\FilteredData.xlsx";
                     string pdfFilePath = @"D:\M&P_Client\PrePayment_Report\report\PDFFilteredData.pdf";
+
                     //    //Convert Excel to PDF using iTextSharp
 
                     ConvertExcelToPdf(newExcelFilePath, pdfFilePath);
@@ -204,11 +204,23 @@ namespace ExcelFileReader
                                 }                                
                         }
                     }
-
+                    var objID2 = new MFilesAPI.ObjID();
+                    objID2.SetIDs(env.ObjVer.Type, env.ObjVer.ID);
+                    var objFileNew = env.Vault.ObjectFileOperations.GetFilesForModificationInEventHandler(env.ObjVer);
+                   // string uniqueNumber = Guid.NewGuid().ToString();
+                    env.Vault.ObjectFileOperations.AddFile(
+                    ObjVer: env.ObjVer,
+                    Title: excelrows+"-Report-" +ExcelPrepaymentNo,
+                    Extension: "pdf",
+                    SourcePath: @"D:\M&P_Client\PrePayment_Report\report\PDFFilteredData.pdf");               
+                    if (File.Exists(pdfFilePath) || File.Exists(newExcelFilePath))
+                    {
+                        File.Delete(pdfFilePath);
+                        File.Delete(newExcelFilePath);
+                    }
+                }
             }
-
         }
-      }
     }
 }
                 
@@ -217,169 +229,5 @@ namespace ExcelFileReader
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                // [EventHandler(MFEventHandlerType.MFEventHandlerAfterCreateNewObjectFinalize, ObjectType = "OT.Excelfilereader")]
-                // public void Calculation(EventHandlerEnvironment env)
-                // {
-                //string ExcelFileReaderClassObj = "CL.ExcelFileReader";
-                //string CompanyNamePD = "PD.CompanyName";
-                //string PrepaymentVoucherNo = "PD.PrepaymentVoucherNumber";
-
-                //string PrePaymentVoucherNo = "PD.PrepaymentNo";
-                //string PrepaymentAmount = "PD.PrepaymentAmount";
-                //string InvoiceTotalAmount = "PD.InvoiceAmount";
-                //string BalanceAmount1 = "PD.BalanceAmount";
-
-
-
-
-
-                ////string PrepaymentAmountPD = "PD.PrepaymentAmount";
-                //string InvoiceTotalAmountPD = "PD.Invoicetotalamount";
-                ////string BalanceAmountPD = "PD.BalanceAmount";
-                //ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
-                //string excelFilePath = @"D:\FilePath\NewSheet.xlsx";
-                //FileInfo fileInfo = new FileInfo(excelFilePath);
-
-
-
-
-                //using (var package = new ExcelPackage(fileInfo))
-                //{
-                //    // Assuming the data is in the first worksheet, adjust as needed
-                //    var worksheet = package.Workbook.Worksheets[0];
-
-                //    // Assuming Company Name is in column A, Prepayment Amount in column B, and Invoice Amount in column C
-                //    int rowCount = worksheet.Dimension.Rows;
-
-                //    double ExcelPrepaymentAmount = 0;
-                //    double ExcelInvoiceTotalAmount = 0;
-                //    string ExcelPrePaymentVoucherNumber = "";
-                //    string ExcelCompanyName = "";
-                //    for (int row = 2; row <= rowCount; row++) // Start from row 2 to skip the header
-                //    {
-
-                //        double invoiceAmount = worksheet.Cells[row, 3].GetValue<double>();
-                //        ExcelPrepaymentAmount = worksheet.Cells[row, 2].GetValue<double>();
-                //        ExcelPrePaymentVoucherNumber = worksheet.Cells[row, 4].GetValue<string>();
-                //        ExcelCompanyName = worksheet.Cells[row, 1].GetValue<string>();
-                //        ExcelInvoiceTotalAmount += invoiceAmount;
-                //    }
-
-                //    // Calculate the remaining prepayment
-                //    double ResultAmount = ExcelPrepaymentAmount - ExcelInvoiceTotalAmount;
-
-                //    ////Now FindOut The Object Of Class Where We Have To Set Above Values
-                //    var objID = new MFilesAPI.ObjID();
-                //    objID.SetIDs(ObjType: env.ObjVer.Type, ID: env.ObjVer.ID);
-                //    var SearchClass = new MFSearchBuilder(env.Vault);
-                //    SearchClass.ObjType(ExcelFileReaderClassObj); //Find the object of Prepayment Class
-                //    SearchClass.Property(PrepaymentVoucherNo, MFDataType.MFDatatypeText, ExcelPrePaymentVoucherNumber);
-                //    SearchClass.Deleted(false);
-                //    var ExcelFileReaderClasObj = SearchClass.FindEx(); //Save The Object Of Class In The Variable
-
-                //    //ExcelFileReaderClasObj.CheckOut();
-                //    //set Value Of CompanyName into M-File Class
-                //    var CompanyName = new MFilesAPI.PropertyValue
-                //    {
-                //        PropertyDef = PermanentVault.PropertyDefOperations.GetPropertyDefIDByAlias(CompanyNamePD)
-                //    };
-                //    CompanyName.Value.SetValue(MFDataType.MFDatatypeInteger, ExcelCompanyName);
-                //    ExcelFileReaderClasObj[0].Vault.ObjectPropertyOperations.SetProperty(ObjVer: ExcelFileReaderClasObj[0].ObjVer, PropertyValue: CompanyName);
-
-                //    //set Value Of PrepaymentVoucherNumber into M-File Class
-                //    var PrepaymentVoucher = new MFilesAPI.PropertyValue
-                //    {
-                //        PropertyDef = PermanentVault.PropertyDefOperations.GetPropertyDefIDByAlias(PrepaymentVoucherNo)
-                //    };
-                //    PrepaymentVoucher.Value.SetValue(MFDataType.MFDatatypeInteger, ExcelPrePaymentVoucherNumber);
-                //    ExcelFileReaderClasObj[1].Vault.ObjectPropertyOperations.SetProperty(ObjVer: ExcelFileReaderClasObj[1].ObjVer, PropertyValue: PrepaymentVoucher);
-
-                //    //set Value Of InvoicAmount into M-File Class
-                //    var InvoiceAmount = new MFilesAPI.PropertyValue
-                //    {
-                //        PropertyDef = PermanentVault.PropertyDefOperations.GetPropertyDefIDByAlias(InvoiceTotalAmountPD)
-
-                //    };
-                //    InvoiceAmount.Value.SetValue(MFDataType.MFDatatypeInteger, ExcelInvoiceTotalAmount);
-                //    ExcelFileReaderClasObj[2].Vault.ObjectPropertyOperations.SetProperty(ObjVer: ExcelFileReaderClasObj[2].ObjVer, PropertyValue: InvoiceAmount);
-
-            
-    
-
-
-                //  Declaring Function Toout the value of Required field from ExcelReport
-                //    var RequiredPrePaymentVoucher = env.ObjVerEx.GetProperty(PrePaymentVoucherNo).Value.DisplayValue.ToString();
-                //var RequiredPrePaymentAmount = Convert.ToDecimal(env.ObjVerEx.GetProperty(PrepaymentAmount).Value.DisplayValue.ToString());
-                //var RequiredInvoiceTotalAmount = Convert.ToDecimal(env.ObjVerEx.GetProperty(InvoiceTotalAmount).Value.DisplayValue.ToString());
-                //// var RequiredBalanceAmount = env.ObjVerEx.GetProperty(BalanceAmount1).Value.DisplayValue.ToString();
-                //var RequiredBalanceAmount = RequiredPrePaymentAmount - RequiredInvoiceTotalAmount;
-
-    ////Now FindOut The Object Of Class Where We Have To Set Above Values
-    //var objID = new MFilesAPI.ObjID();
-    //objID.SetIDs(ObjType: env.ObjVer.Type, ID: env.ObjVer.ID);
-    //var SearchClass = new MFSearchBuilder(env.Vault);
-    //SearchClass.ObjType(PrePaymentVoucher); //Find the object of Prepayment Class
-    //SearchClass.Property(Prepayment_prepaymentNO, MFDataType.MFDatatypeText, RequiredPrePaymentVoucher);
-    //SearchClass.Deleted(false);
-    //var PrepaymantClassObj = SearchClass.FindEx(); //Save The Object Of Class In The Variable
-    //for (int i = 0; i < PrepaymantClassObj.Count; i++)
-    //{
-    //    //Set Field Values On PrePaymentVoucher Class
-    //    PrepaymantClassObj[i].CheckOut();
-    //    var PrePaymentAmount = new MFilesAPI.PropertyValue
-    //    {
-    //        PropertyDef = PermanentVault.PropertyDefOperations.GetPropertyDefIDByAlias(PrepaymentAmount)
-    //    };
-    //    PrePaymentAmount.Value.SetValue(MFDataType.MFDatatypeInteger, RequiredPrePaymentAmount);
-    //    PrepaymantClassObj[i].Vault.ObjectPropertyOperations.SetProperty(ObjVer: PrepaymantClassObj[i].ObjVer, PropertyValue: PrePaymentAmount);
-
-    //    var InoiceAmount = new MFilesAPI.PropertyValue
-    //    {
-    //        PropertyDef = PermanentVault.PropertyDefOperations.GetPropertyDefIDByAlias(InvoiceTotalAmount)
-    //    };
-    //    InoiceAmount.Value.SetValue(MFDataType.MFDatatypeInteger, RequiredInvoiceTotalAmount);
-    //    PrepaymantClassObj[i].Vault.ObjectPropertyOperations.SetProperty(ObjVer: PrepaymantClassObj[i].ObjVer, PropertyValue: InoiceAmount);
-
-    //    var BalanceAmount = new MFilesAPI.PropertyValue
-    //    {
-    //        PropertyDef = PermanentVault.PropertyDefOperations.GetPropertyDefIDByAlias(BalanceAmount1)
-    //    };
-    //    BalanceAmount.Value.SetValue(MFDataType.MFDatatypeInteger, RequiredBalanceAmount);
-    //    PrepaymantClassObj[i].Vault.ObjectPropertyOperations.SetProperty(ObjVer: PrepaymantClassObj[i].ObjVer, PropertyValue: BalanceAmount);
-    //    PrepaymantClassObj[i].CheckIn();
-    //    break;
-    //}
 
  
